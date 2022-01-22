@@ -4,24 +4,24 @@ import { Button, Input, Table } from "reactstrap";
 // helper component for ____ (that i made some time leater) or rowItem
 const RowItem = ({ todo, toggleSelect, toggleComplete }) => (
   <tr>
-    <th scope="row">
+    <td scope="row">
       <Input
         type="checkbox"
         id={todo.id}
         checked={todo.isSelect}
         onChange={() => toggleSelect(todo.id)}
       />
-    </th>
-    <th>{todo.time.toDateString()}</th>
-    <th>{todo.text}</th>
-    <th>
+    </td>
+    <td>{todo.text}</td>
+    <td>{todo.time.toDateString()}</td>
+    <td>
       <Button
         color={todo.isComplete ? "danger" : "success"}
         onClick={() => toggleComplete(todo.id)}
       >
         {todo.isComplete ? "Completed" : "Running"}
       </Button>
-    </th>
+    </td>
   </tr>
 );
 
@@ -36,10 +36,12 @@ RowItem.propTypes = {
 const TableView = ({ todos, toggleComplete, toggleSelect }) => (
   <Table>
     <thead>
-      <th>#</th>
-      <th>Time</th>
-      <th>Todo</th>
-      <th>Action</th>
+      <tr>
+        <th>#</th>
+        <th>Time</th>
+        <th>Todo</th>
+        <th>Action</th>
+      </tr>
     </thead>
     <tbody>
       {todos.map((todo) => (
@@ -56,7 +58,7 @@ const TableView = ({ todos, toggleComplete, toggleSelect }) => (
 
 // PropTypes for TableView
 TableView.propTypes = {
-  todos: PropTypes.object.isRequired,
+  todos: PropTypes.array.isRequired,
   toggleComplete: PropTypes.func.isRequired,
   toggleSelect: PropTypes.func.isRequired,
 };
