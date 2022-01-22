@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { ListGroup, ListGroupItem, Button, Input } from "reactstrap";
 
 // List Item Component or Helper component main components in the down
@@ -26,7 +27,12 @@ const ListItem = ({ todo, toggleSelect, toggleComplete }) => {
   );
 };
 
-// leater i will add propTypes now i have in a problem
+//  PropTypes for ListItem
+ListItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+  toggleComplete: PropTypes.func.isRequired,
+  toggleSelect: PropTypes.func.isRequired,
+};
 
 // Main Components or List views components
 
@@ -45,6 +51,11 @@ const ListView = ({ todos, toggleSelect, toggleComplete }) => {
   );
 };
 
-// Here i will add propTypes in laters case i have a problem now
+//  PropTypes for ListView
+ListView.propTypes = {
+  todos: PropTypes.object.isRequired,
+  toggleComplete: PropTypes.func.isRequired,
+  toggleSelect: PropTypes.func.isRequired,
+};
 
 export default ListView;

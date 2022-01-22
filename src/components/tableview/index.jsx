@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Button, Input, Table } from "reactstrap";
 
 // helper component for ____ (that i made some time leater) or rowItem
@@ -24,10 +25,14 @@ const RowItem = ({ todo, toggleSelect, toggleComplete }) => (
   </tr>
 );
 
-// here i will add propTypes leter case i have some problem now
+// PropTypes for RowItem
+RowItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+  toggleComplete: PropTypes.func.isRequired,
+  toggleSelect: PropTypes.func.isRequired,
+};
 
 // Main component of this file or tableview
-
 const TableView = ({ todos, toggleComplete, toggleSelect }) => (
   <Table>
     <thead>
@@ -49,6 +54,11 @@ const TableView = ({ todos, toggleComplete, toggleSelect }) => (
   </Table>
 );
 
-// here i will add propType in later case i have some problem now
+// PropTypes for TableView
+TableView.propTypes = {
+  todos: PropTypes.object.isRequired,
+  toggleComplete: PropTypes.func.isRequired,
+  toggleSelect: PropTypes.func.isRequired,
+};
 
 export default TableView;
