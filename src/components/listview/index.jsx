@@ -1,11 +1,11 @@
-import { ListGroup, ListGroupItem, CustomInput, Button } from "reactstrap";
+import { ListGroup, ListGroupItem, Button, Input } from "reactstrap";
 
 // List Item Component or Helper component main components in the down
 
 const ListItem = ({ todo, toggleSelect, toggleComplete }) => {
   return (
-    <ListGroupItem className="d-flex align-items-center ">
-      <CustomInput
+    <ListGroupItem className="d-flex align-items-center justify-content-between">
+      <Input
         type="checkbox"
         id={todo.id}
         checked={todo.isSelect}

@@ -1,10 +1,10 @@
-import { Button, CustomInput, Table } from "reactstrap";
+import { Button, Input, Table } from "reactstrap";
 
 // helper component for ____ (that i made some time leater) or rowItem
 const RowItem = ({ todo, toggleSelect, toggleComplete }) => (
   <tr>
     <th scope="row">
-      <CustomInput
+      <Input
         type="checkbox"
         id={todo.id}
         checked={todo.isSelect}

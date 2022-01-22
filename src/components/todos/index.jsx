@@ -36,7 +36,11 @@ class Todos extends Component {
           toggleComplete={this.toggleComplete}
           toggleSelect={this.toggleSelect}
         />
-        <TableView />
+        <TableView
+          todos={this.state.todos}
+          toggleComplete={this.toggleComplete}
+          toggleSelect={this.toggleSelect}
+        />
       </div>
     );
   }
