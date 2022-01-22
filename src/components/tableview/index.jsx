@@ -4,7 +4,7 @@ import { Button, Input, Table } from "reactstrap";
 // helper component for ____ (that i made some time leater) or rowItem
 const RowItem = ({ todo, toggleSelect, toggleComplete }) => (
   <tr>
-    <td scope="row">
+    <td>
       <Input
         type="checkbox"
         id={todo.id}

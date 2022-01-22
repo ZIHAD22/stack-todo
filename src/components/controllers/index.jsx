@@ -20,3 +20,5 @@ Controller.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,
 };
+
+export default Controller;

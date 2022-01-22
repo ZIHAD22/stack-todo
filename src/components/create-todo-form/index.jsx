@@ -16,7 +16,7 @@ class CreateTodoForm extends Component {
   };
 
   handleSubmit = (event) => {
-    event.prevebtDefault();
+    event.preventDefault();
     this.props.createTodo(this.state);
     event.target.reset();
     this.setState({
@@ -27,8 +27,8 @@ class CreateTodoForm extends Component {
 
   render() {
     return (
-      <Form>
-        <FormGroup onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit}>
+        <FormGroup>
           <Label>Enter Task</Label>
           <Input
             placeholder="Do some Code"
