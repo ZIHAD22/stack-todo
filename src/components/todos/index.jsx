@@ -33,8 +33,20 @@ class Todos extends Component {
   };
 
   // view Component function needed
-  toggleComplete = (todoId) => console.log(todoId);
-  toggleSelect = (todoId) => console.log(todoId);
+  toggleComplete = (todoId) => {
+    const todos = [...this.state.todos];
+    const todo = todos.find((t) => t.id === todoId);
+    todo.isComplete = !todo.isComplete;
+    console.log(todo);
+    this.setState({ todos });
+  };
+  toggleSelect = (todoId) => {
+    const todos = [...this.state.todos];
+    const todo = todos.find((t) => t.id === todoId);
+    todo.isSelect = !todo.isSelect;
+    console.log(todo);
+    this.setState({ todos });
+  };
 
   // Controller function needed
   handleSearch = () => {};
@@ -68,12 +80,13 @@ class Todos extends Component {
           toggleForm={this.toggleForm}
           handleSearch={this.handleSearch}
         />
-        <ListView
+        <TableView
           todos={this.state.todos}
           toggleComplete={this.toggleComplete}
           toggleSelect={this.toggleSelect}
         />
-        <TableView
+
+        <ListView
           todos={this.state.todos}
           toggleComplete={this.toggleComplete}
           toggleSelect={this.toggleSelect}

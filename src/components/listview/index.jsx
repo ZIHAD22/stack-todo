@@ -19,7 +19,7 @@ const ListItem = ({ todo, toggleSelect, toggleComplete }) => {
       <Button
         className="ms-auto"
         color={todo.isComplete ? "danger" : "success"}
-        onChange={() => toggleComplete(todo.id)}
+        onClick={() => toggleComplete(todo.id)}
       >
         {todo.isComplete ? "Completed" : "Running"}
       </Button>
